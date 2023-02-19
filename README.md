@@ -386,7 +386,7 @@ output "slaves_ips" {
 ```
 </details>
 
-<details markdown=1><summary markdown="span">Pre-requisites to launch</summary>
+<details markdown=1><summary markdown="span">Extras / pre-requisites</summary>
 
 ``` sh
 1. create key pairs on a master machine 
