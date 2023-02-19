@@ -99,7 +99,7 @@ crontab -l | { cat; echo "0 0 * * 0 scp /home/ec2-user/Transmogrified/* user@rem
 
 ``` sh
 sudo chmod +x script.sh && sudo chmod +x script_cron.sh
-bash script.sh && bash script_cron.sh
+sudo bash script.sh && sudo bash script_cron.sh
 ```
 </details>
 
