@@ -5,7 +5,8 @@
 
 ---
 
-1. Bash 
+1. Bash <br>
+
 1.1. 
 
     <details markdown=1><summary markdown="span">Script</summary>
