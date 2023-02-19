@@ -98,6 +98,7 @@ crontab -l | { cat; echo "0 0 * * 0 scp /home/ec2-user/Transmogrified/* user@rem
 <details markdown=1><summary markdown="span">Pre-requisites to launch</summary>
 
 ```
+
 ```
 </details>
 
@@ -185,7 +186,19 @@ else:
 
 <details markdown=1><summary markdown="span">Pre-requisites to launch</summary>
 
-```
+``` python3
+#!/usr/bin/env python
+
+import subprocess
+
+# Add cron job to run script.sh every minute
+subprocess.run(['bash', '-c', 'echo "$(crontab -l ; echo \'*/1 * * * * bash /home/ec2-user/script.sh\') | crontab -"'])
+
+# Add cron job to archive files every minute
+subprocess.run(['bash', '-c', 'echo "$(crontab -l ; echo \'*/1 * * * * tar -czvf /home/ec2-user/Archives/archive_$(hostname | cut -d \'.\' -f 1)_$(date +\%Y\%m\%d_\%H\%M\%S).tar.gz /home/ec2-user/Transmogrified/*\') | crontab -"'])
+
+# Add cron job to copy files to remote server every Sunday at midnight
+subprocess.run(['bash', '-c', 'echo "$(crontab -l ; echo \'0 0 * * 0 scp /home/ec2-user/Transmogrified/* user@remote.server:/path/to/remote/directory/\') | crontab -"'])
 
 ```
 </details>
