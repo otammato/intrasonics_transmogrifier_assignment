@@ -10,8 +10,8 @@
 
     <details markdown=1><summary markdown="span">Script</summary>
 
-   ```
-   #!/bin/bash
+```
+#!/bin/bash
 
 user="transmogrifier"
 all_users=($(getent passwd | cut -d: -f1))
@@ -83,6 +83,6 @@ fi
 
 
 
-   ```
+```
 
     </details>
