@@ -353,23 +353,33 @@ output "slaves_ips" {
 <details markdown=1><summary markdown="span">Ansible playbook</summary>
 
 ``` yml
+# Ansible playbook to create user and folder on slaves
+# and schedule script to run every minute, and archive files
+# for transfer to a master server
+
 ---
+
+# Define hosts, privilege escalation, and gather facts
 - name: Create user and folder on slaves
   hosts: all
   become: true
   gather_facts: true
 
+  # Define variables to be used later
   vars:
     user: transmogrifier
     week_number: "{{ ansible_date_time.week_number }}"
 
+  # Define tasks to be performed
   tasks:
+    # Create a user for running the script
     - name: Create transmogrifier user
       user:
         name: "{{ user }}"
         group: "ec2-user"
         state: present
 
+    # Create the directory for storing the files to be processed
     - name: Create Transmogrified folder
       file:
         path: /home/ec2-user/Transmogrified
@@ -378,6 +388,7 @@ output "slaves_ips" {
         group: "ec2-user"
         mode: '0777'
         
+    # Create a directory to store archive files
     - name: Create a Tar folder for archives
       file:
         path: /home/ec2-user/Archives
@@ -386,6 +397,7 @@ output "slaves_ips" {
         group: "ec2-user"
         mode: '0777'
 
+    # Copy the script to the slave servers
     - name: Copy transmogrifier script to slave
       copy:
         src: /home/ec2-user/environment/Terraform/script.sh
@@ -394,6 +406,7 @@ output "slaves_ips" {
         group: "ec2-user"
         mode: '0777'
         
+    # Schedule the script to run every minute
     - name: Create cron task to run script every minute
       ansible.builtin.cron:
         user: "ec2-user"
@@ -401,7 +414,7 @@ output "slaves_ips" {
         minute: "*/1"
         job: "bash /home/ec2-user/script.sh"    
         
-        
+    # Schedule a weekly archive of the processed files
     - name: Create weekly tar archive of Transmogrified folder
       ansible.builtin.cron:
         user: "ec2-user"
@@ -413,6 +426,7 @@ output "slaves_ips" {
         month: "*"
         weekday: "*"
 
+    # Transfer the monthly archives to the master server
     - name: Move monthly archives to the master server
       ansible.builtin.cron:
         user: "ec2-user"
@@ -420,8 +434,7 @@ output "slaves_ips" {
         job: "rsync -avz /home/ec2-user/Archives/*.tar.gz root@ec2-3-80-47-11.compute-1.amazonaws.com"
         day: 1
         
-    
-
+    # Execute the script on the slave servers
     - name: Execute transmogrifier script on the slaves
       become: true
       become_user: root
