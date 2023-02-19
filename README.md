@@ -254,14 +254,14 @@ resource "aws_security_group" "ec2_security_group" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"] # change this to your ip for the security reasons
+    cidr_blocks = ["0.0.0.0/0"] # change this to your ip for sake of security!!
   }
 
   ingress {
     from_port   = 80
     to_port     = 80
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"] # change this to your ip for the security reasons
+    cidr_blocks = ["0.0.0.0/0"] # change this to your ip for sake of security!!
   }
   
 
