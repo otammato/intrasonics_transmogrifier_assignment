@@ -482,15 +482,15 @@ ansible-playbook playbook.yml
 <details markdown=1><summary markdown="span">Extra commands which might be useful</summary>
 
 ``` sh
-1. create key pairs on a master machine 
-    ssh-keygen -t rsa -b 2048
+# create key pairs on a master machine 
+ssh-keygen -t rsa -b 2048
 
-2. import public key into the ec2 console
-    aws ec2 import-key-pair --key-name "test_delete" --public-key-material fileb://~/.ssh/test_delete.pem
+# import public key into the ec2 console
+aws ec2 import-key-pair --key-name "test_delete" --public-key-material fileb://~/.ssh/test_delete.pem
 
-3. install ansible on a master machine
-    sudo yum update -y
-    sudo amazon-linux-extras install ansible2 -y
+# install ansible on a master machine
+sudo yum update -y
+sudo amazon-linux-extras install ansible2 -y
 ```
 </details>
 
