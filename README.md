@@ -144,5 +144,5 @@ crontab -l | { cat; echo "0 0 * * 0 scp /home/ec2-user/Transmogrified/* user@rem
 ```
 </details>
 
-<img width="838" alt="Screenshot 2023-02-19 at 17 45 01" src="https://user-images.githubusercontent.com/104728608/219965610-eaa9b242-b6c2-439c-833c-800524c1d39f.png">
+<img width="1024" alt="Screenshot 2023-02-19 at 17 45 01" src="https://user-images.githubusercontent.com/104728608/219965610-eaa9b242-b6c2-439c-833c-800524c1d39f.png">
 
