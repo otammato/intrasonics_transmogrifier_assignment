@@ -105,3 +105,25 @@ crontab -l | { cat; echo "0 0 * * 0 scp /home/ec2-user/Transmogrified/* user@rem
 
 ## Python <br>
 
+<details markdown=1><summary markdown="span">Script</summary>
+
+```
+
+```
+</details>
+
+<details markdown=1><summary markdown="span">Cron script</summary>
+
+```
+
+```
+</details>
+
+<details markdown=1><summary markdown="span">Pre-requisites</summary>
+
+```
+
+```
+</details>
+
+---
