@@ -307,12 +307,86 @@ output "slaves_ips" {
 ```
 </details>
 
-<details markdown=1><summary markdown="span">Ansible script</summary>
+<details markdown=1><summary markdown="span">Ansible playbook</summary>
 
-```
+``` ansible
+---
+- name: Create user and folder on slaves
+  hosts: all
+  become: true
+  gather_facts: true
 
+  vars:
+    user: transmogrifier
+    week_number: "{{ ansible_date_time.week_number }}"
+
+  tasks:
+    - name: Create transmogrifier user
+      user:
+        name: "{{ user }}"
+        group: "ec2-user"
+        state: present
+
+    - name: Create Transmogrified folder
+      file:
+        path: /home/ec2-user/Transmogrified
+        state: directory
+        owner: "{{ user }}"
+        group: "ec2-user"
+        mode: '0777'
+        
+    - name: Create a Tar folder for archives
+      file:
+        path: /home/ec2-user/Archives
+        state: directory
+        owner: "{{ user }}"
+        group: "ec2-user"
+        mode: '0777'
+
+    - name: Copy transmogrifier script to slave
+      copy:
+        src: /home/ec2-user/environment/Terraform/script.sh
+        dest: /home/ec2-user/script.sh
+        owner: "ec2-user"
+        group: "ec2-user"
+        mode: '0777'
+        
+    - name: Create cron task to run script every minute
+      ansible.builtin.cron:
+        user: "ec2-user"
+        name: "Run script every minute"
+        minute: "*/1"
+        job: "bash /home/ec2-user/script.sh"    
+        
+        
+    - name: Create weekly tar archive of Transmogrified folder
+      ansible.builtin.cron:
+        user: "ec2-user"
+        name: "Weekly tar archive of Transmogrified folder"
+        job: "tar -czvf /home/ec2-user/Archives/archive_$(hostname | cut -d '.' -f 1)_$(date +\%Y\%m\%d_\%H\%M\%S).tar.gz /home/ec2-user/Transmogrified/*"
+        minute: "*/1"
+        hour: "*"
+        day: "*"
+        month: "*"
+        weekday: "*"
+
+    - name: Move monthly archives to the master server
+      ansible.builtin.cron:
+        user: "ec2-user"
+        name: "Monthly archive transfer to master server"
+        job: "rsync -avz /home/ec2-user/Archives/*.tar.gz root@ec2-3-80-47-11.compute-1.amazonaws.com"
+        day: 1
+        
+    
+
+    - name: Execute transmogrifier script on the slaves
+      become: true
+      become_user: root
+      shell: "/home/ec2-user/script.sh"
 ```
 </details>
+
+---
 
 <img width="1024" alt="Screenshot 2023-02-19 at 17 45 01" src="https://user-images.githubusercontent.com/104728608/219965610-eaa9b242-b6c2-439c-833c-800524c1d39f.png">
 
