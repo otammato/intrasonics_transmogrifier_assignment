@@ -243,21 +243,24 @@ sudo python3 script.py && sudo python3 script_cron.py
 <details markdown=1><summary markdown="span">Terraform script</summary>
 
 ``` tf
+# Configure AWS provider for us-east-1 region with shared credentials and config files
 provider "aws" {
   region                    = "us-east-1"
   shared_config_files       = ["/home/ec2-user/.aws/config"]
   shared_credentials_files  = ["/home/ec2-user/.aws/credentials"]
 }
 
-
+# Retrieve availability zones in the specified state
 data "aws_availability_zones" "available" {
   state = "available"
 }
+
+# Retrieve the latest Amazon Linux 2 AMI ID from AWS Systems Manager Parameter Store
 data "aws_ssm_parameter" "current-ami" {
   name = "/aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2"
 }
 
-
+# Create a default VPC with DNS hostnames and support enabled
 resource "aws_default_vpc" "default" {
   enable_dns_hostnames = true
   enable_dns_support   = true
@@ -266,45 +269,46 @@ resource "aws_default_vpc" "default" {
   }
 }
 
+# Create a subnet in the default VPC with a specific CIDR block and availability zone
 resource "aws_subnet" "subnet_1" {
   vpc_id     = aws_default_vpc.default.id
-  # cidr_block = "10.0.1.0/24"
-  cidr_block = "172.31.98.128/25"
-  availability_zone = data.aws_availability_zones.available.names[0]
+  cidr_block = "172.31.98.128/25"  # change this to your desired CIDR block
+  availability_zone = data.aws_availability_zones.available.names[0]  # use the first available AZ
 
   tags = {
     Name = "ansible-subnet_1"
   }
 }
 
+# Create a security group allowing inbound SSH and HTTP traffic and all outbound traffic
 resource "aws_security_group" "ec2_security_group" {
   name        = "ec2-slave-security-group"
-  description = "Allow ssh and http access"
+  description = "Allow SSH and HTTP access"
   vpc_id      = aws_default_vpc.default.id
 
   ingress {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"] # change this to your ip for sake of security!!
+    cidr_blocks = ["0.0.0.0/0"]  # change this to your IP for security
   }
 
   ingress {
     from_port   = 80
     to_port     = 80
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"] # change this to your ip for sake of security!!
+    cidr_blocks = ["0.0.0.0/0"]  # change this to your IP for security
   }
-  
 
   egress {
     from_port   = 0
     to_port     = 0
     protocol    = "-1"
-    cidr_blocks = ["0.0.0.0/0"] 
+    cidr_blocks = ["0.0.0.0/0"]
   }
 }
 
+# Launch an EC2 instance with the specified AMI, instance type, and subnet, and attach the security group
 resource "aws_instance" "ansible_slave" {
   count = 1
   ami           = data.aws_ssm_parameter.current-ami.value
@@ -319,6 +323,7 @@ resource "aws_instance" "ansible_slave" {
   }
 }
 
+# Create a local file containing the public IP addresses of the launched EC2 instances
 resource "local_file" "slaves_ips" {
     content = format("%s\n%s\n%s",
   aws_instance.ansible_slave.*.public_ip[0],
