@@ -127,3 +127,19 @@ crontab -l | { cat; echo "0 0 * * 0 scp /home/ec2-user/Transmogrified/* user@rem
 </details>
 
 ---
+
+## Optional (creating the infrastructure to host and launch the script)
+
+<details markdown=1><summary markdown="span">Terraform script</summary>
+
+```
+
+```
+</details>
+
+<details markdown=1><summary markdown="span">Ansible script</summary>
+
+```
+
+```
+</details>
