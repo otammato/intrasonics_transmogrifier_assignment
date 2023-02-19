@@ -20,8 +20,8 @@ Write a script in the language of your choosing, which will be used to achieve t
 The solution involves:
 1. The main script
 - to regularly monitor and log processes and content of the Transmogrified/ folder to .txt files 
-- to place created log files at the same (for simplicity) Transmogrified/ folder
-2. The script to launch cron tasks:
+- to place the created log files at the same (for simplicity) Transmogrified/ folder
+2. The script launching these cron tasks:
 - at regular intervals launch the main script
 - at regular intervals create .tar archives and place them to Archives/ folder
 - at regular intervals backup the .tar archives to a "master" server managed by a DevOps
