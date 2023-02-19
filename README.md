@@ -309,7 +309,7 @@ output "slaves_ips" {
 
 <details markdown=1><summary markdown="span">Ansible playbook</summary>
 
-``` ansible
+``` yml
 ---
 - name: Create user and folder on slaves
   hosts: all
