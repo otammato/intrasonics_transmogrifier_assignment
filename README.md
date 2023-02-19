@@ -248,6 +248,11 @@ sudo python3 script.py && sudo python3 script_cron.py
 <details markdown=1><summary markdown="span">Terraform script</summary>
 
 ``` tf
+# Terraform script that configures AWS provider for us-east-1 region with shared 
+# credentials and config files, and launches an EC2 instance with the specified AMI, 
+# instance type, and subnet, and attaches the security group.
+# It also creates an "inventory" file for the following Ansible playbook and IPs as output
+
 # Configure AWS provider for us-east-1 region with shared credentials and config files
 provider "aws" {
   region                    = "us-east-1"
