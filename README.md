@@ -447,4 +447,4 @@ ansible-playbook playbook.yml
 ---
 
 
-<img width="1024" alt="Screenshot 2023-02-19 at 18 51 39" src="https://user-images.githubusercontent.com/104728608/219968855-cb69cf48-0642-4647-bbe4-30656ff73e3f.png">
+<img width="1024" alt="Screenshot 2023-02-19 at 20 11 21" src="https://user-images.githubusercontent.com/104728608/219972747-c9334130-8beb-4837-b3f1-84464838d4a3.png">
