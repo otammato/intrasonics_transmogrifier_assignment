@@ -108,7 +108,71 @@ crontab -l | { cat; echo "0 0 * * 0 scp /home/ec2-user/Transmogrified/* user@rem
 <details markdown=1><summary markdown="span">Script</summary>
 
 ```
+#!/usr/bin/env python
 
+import os
+import subprocess
+from datetime import datetime
+
+user = "transmogrifier"
+all_users = subprocess.check_output(["getent", "passwd"]).decode("utf-8").split("\n")
+all_users = [u.split(":")[0] for u in all_users if u]
+
+if user in all_users:
+    # Check if the Transmogrified/ folder exists
+    if os.path.isdir("Transmogrified/"):
+        # Get the list of files in the Transmogrified/ folder
+        files_list = [f for f in os.listdir("Transmogrified/") if os.path.isfile(os.path.join("Transmogrified/", f))]
+    else:
+        # Create the Transmogrified/ folder and set files_list to an empty array
+        os.makedirs("Transmogrified/")
+        print("Transmogrified/ folder created")
+        files_list = []
+
+        # Set the owner and group for Transmogrified/ folder and give read, write, and execute permissions recursively
+        os.system("sudo chown -R transmogrifier:ec2-user Transmogrified/")
+        os.system("sudo chmod -R g+rwx Transmogrified/")
+        os.system("sudo chmod -R o-rx Transmogrified/")
+    
+    # Check if Archives/ exists and create it if not
+    if not os.path.isdir("Archives/"):
+        # Create the Archives/ folder and set files_list to an empty array
+        os.makedirs("Archives/")
+        print("Archives/ folder created")
+
+        # Set the owner and group for Archives/ folder and give read, write, and execute permissions recursively
+        os.system("sudo chown -R transmogrifier:ec2-user Archives/")
+        os.system("sudo chmod -R g+rwx Archives/")
+        os.system("sudo chmod -R o-rx Archives/")
+    
+    # Get the list of running processes for user 'transmogrifier'
+    process_list = []
+    ps_output = subprocess.check_output(["ps", "-eo", "pid,comm,user"]).decode("utf-8")
+    for line in ps_output.split("\n")[1:]:
+        if not line.strip():
+            continue
+        pid, name, username = line.split()
+        if username == user:
+            process_list.append(f"{pid} {name} {username}")
+    
+    # Print the lists to the console
+    print("Transmogrified files:")
+    print("\n".join(files_list))
+    print("Running processes for user 'transmogrifier':")
+    print("\n".join(process_list))
+    
+    # Save the lists to a file in Transmogrified/ directory
+    file_prefix = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+    with open(f"Transmogrified/{file_prefix}_file_and_process_list.txt", "w") as f:
+        f.write("Transmogrified files:\n")
+        f.write("\n".join(files_list) + "\n\n")
+        f.write("Running processes for user 'transmogrifier':\n")
+        f.write("\n".join(process_list) + "\n")
+    print(f"Saved file and process lists to file: Transmogrified/{file_prefix}_file_and_process_list.txt")
+else:
+    os.system(f"sudo useradd {user}")
+    os.system(f"sudo usermod -a -G ec2-user {user}")
+    print(f"{user} created, please create a password to the user")
 ```
 </details>
 
