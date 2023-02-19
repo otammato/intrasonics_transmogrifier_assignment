@@ -98,7 +98,8 @@ crontab -l | { cat; echo "0 0 * * 0 scp /home/ec2-user/Transmogrified/* user@rem
 <details markdown=1><summary markdown="span">Pre-requisites to launch</summary>
 
 ``` sh
-
+sudo chmod +x script.sh && sudo chmod +x script_cron.sh
+bash script.sh && bash script_cron.sh
 ```
 </details>
 
