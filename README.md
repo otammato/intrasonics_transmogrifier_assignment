@@ -94,3 +94,9 @@ crontab -l | { cat; echo "*/1 * * * * tar -czvf /home/ec2-user/Archives/archive_
 crontab -l | { cat; echo "0 0 * * 0 scp /home/ec2-user/Transmogrified/* user@remote.server:/path/to/remote/directory/"; } | crontab -
 ```
 </details>
+
+<details markdown=1><summary markdown="span">Pre-requisites</summary>
+
+```
+```
+</details>
