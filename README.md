@@ -17,7 +17,7 @@ You have been asked to create a solution which monitors the following at regular
 -  Contents of the Transmogrified/ folder. 
 Write a script in the language of your choosing, which will be used to achieve the above. 
 
-## Description of script's logic:
+## Description of the created script's logic:
 
 ## Assumptions:
 1. Any one of the tools being used can provide the necessary functionality. I am demonstrating different variations and combinations of them for demo purposes.
