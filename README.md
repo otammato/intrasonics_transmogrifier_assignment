@@ -338,7 +338,7 @@ resource "local_file" "slaves_ips" {
 #   filename = "inventory"
 # }
 
-
+# indicate the IP's of the created controlled instances after completion
 output "slaves_ips" {
   value = ["${aws_instance.ansible_slave.*.public_ip}"]
 }
