@@ -9,6 +9,7 @@
 
 
 <details markdown=1><summary markdown="span">Script</summary>
+
 ```
 #!/bin/bash
 
