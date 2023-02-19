@@ -25,7 +25,7 @@ The solution involves:
 - at regular intervals launch the main script
 - at regular intervals create .tar archives of Transmogrified/ folder's content and place them to the Archives/ folder
 - at regular intervals backup the .tar archives to a "master" server managed by a DevOps using rsync
-3. [Optionally] Terraform + Ansible infrastructure to test the script
+### 3. [Optionally] Terraform + Ansible infrastructure to test the script
 
 
 ## Assumptions:
