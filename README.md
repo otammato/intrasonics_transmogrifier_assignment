@@ -16,7 +16,7 @@ You have been asked to create a solution which monitors the following at regular
 -  Contents of the Transmogrified/ folder. 
 Write a script in the language of your choosing, which will be used to achieve the above. 
 
-## Description of the created script's logic:
+## Description of the logic of the created script:
 The solution involves:
 1. The main script
 - to regularly monitor and log processes and content of the Transmogrified/ folder to .txt files 
