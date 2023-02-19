@@ -8,8 +8,7 @@
 1. Bash <br>
 
 
-    <details markdown=1><summary markdown="span">Script</summary>
-
+<details markdown=1><summary markdown="span">Script</summary>
 ```
 #!/bin/bash
 
@@ -78,11 +77,6 @@ else
     sudo usermod -a -G ec2-user "$user"
     echo ""$user" created, please create a password to the user"
 fi
-
-
-
-
-
 ```
 
-    </details>
+</details>
