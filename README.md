@@ -81,3 +81,16 @@ fi
 ```
 
 </details>
+
+<details markdown=1><summary markdown="span">Cron script</summary>
+
+```
+#!/bin/bash
+
+crontab -l | { cat; echo "*/1 * * * * bash /home/ec2-user/script.sh"; } | crontab -
+
+crontab -l | { cat; echo "*/1 * * * * tar -czvf /home/ec2-user/Archives/archive_$(hostname | cut -d '.' -f 1)_$(date +\%Y\%m\%d_\%H\%M\%S).tar.gz /home/ec2-user/Transmogrified/*"; } | crontab -
+
+crontab -l | { cat; echo "0 0 * * 0 scp /home/ec2-user/Transmogrified/* user@remote.server:/path/to/remote/directory/"; } | crontab -
+```
+</details>
