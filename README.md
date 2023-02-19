@@ -18,10 +18,10 @@ Write a script in the language of your choosing, which will be used to achieve t
 
 ## Description of the logic of the created script:
 The solution involves:
-1. The main script
+### 1. The main script
 - to regularly monitor and log processes and content of the Transmogrified/ folder to .txt files 
 - to place the created log files at the same (for simplicity) Transmogrified/ folder
-2. The script for launching these cron tasks:
+### 2. The script for launching these cron tasks:
 - at regular intervals launch the main script
 - at regular intervals create .tar archives of Transmogrified/ folder's content and place them to the Archives/ folder
 - at regular intervals backup the .tar archives to a "master" server managed by a DevOps using rsync
