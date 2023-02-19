@@ -199,8 +199,9 @@ subprocess.run(['bash', '-c', 'echo "$(crontab -l ; echo \'0 0 * * 0 scp /home/e
 <details markdown=1><summary markdown="span">Pre-requisites to launch</summary>
 
 ``` python3
+sudo chmod +x script.py && sudo chmod +x script_cron.py
 
-
+sudo python3 script.py && sudo python3 script_cron.py
 ```
 </details>
 
