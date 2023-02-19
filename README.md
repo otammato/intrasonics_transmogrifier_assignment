@@ -24,6 +24,7 @@ The solution involves:
 - at regular intervals launch the main script
 - at regular intervals create .tar archives and place them to Archives/ folder
 - at regular intervals backup the .tar archives to a "master" server managed by a DevOps
+3. [Optionally] Terraform + Ansible infrastructure to test the script
 
 
 ## Assumptions:
