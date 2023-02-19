@@ -9,7 +9,7 @@ The recently added functionality is expected to behave in the following way:
 -  Each of these processes may run for an extended period, depending on how much work is required to serve their specific request. This workload is expected to be highly variable. 
 -  A dedicated Transmogrified/ folder has been created on each server, which these processes will occasionally write to. 
 <br>
-You have been asked to create a solution which monitors the following at regular intervals: 
+You have been asked to create a solution which monitors the following at regular intervals:<br>
 -  Processes currently running on the machine. 
 -  Contents of the Transmogrified/ folder. 
 Write a script in the language of your choosing, which will be used to achieve the above. 
