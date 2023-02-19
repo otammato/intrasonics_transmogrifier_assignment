@@ -413,5 +413,5 @@ private_key_file = ~/.ssh/test_delete.pem
 
 ---
 
-<img width="1024" alt="Screenshot 2023-02-19 at 17 45 01" src="https://user-images.githubusercontent.com/104728608/219965610-eaa9b242-b6c2-439c-833c-800524c1d39f.png">
 
+<img width="1024" alt="Screenshot 2023-02-19 at 18 51 39" src="https://user-images.githubusercontent.com/104728608/219968855-cb69cf48-0642-4647-bbe4-30656ff73e3f.png">
