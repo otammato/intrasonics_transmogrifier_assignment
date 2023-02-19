@@ -17,6 +17,14 @@ You have been asked to create a solution which monitors the following at regular
 Write a script in the language of your choosing, which will be used to achieve the above. 
 
 ## Description of the created script's logic:
+The solution involves:
+1. The main script
+- to regularly monitor and log processes and content of the Transmogrified/ folder to .txt files and place them at the same Transmogrified/ folder
+2. The script to launch a cron tasks:
+- at regular intervals launch the main script
+- at regular intervals create .tar archives and place them to Archives/ folder
+- at regular intervals backup the .tar archives to a "master" server managed by a DevOps
+
 
 ## Assumptions:
 1. Any one of the tools being used can provide the necessary functionality. I am demonstrating different variations and combinations of them for demo purposes.
