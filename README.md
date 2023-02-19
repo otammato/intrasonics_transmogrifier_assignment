@@ -3,15 +3,15 @@
 
 <img width="1024" alt="Screenshot 2023-02-19 at 16 30 51" src="https://user-images.githubusercontent.com/104728608/219961551-35e4cb7a-e0dd-46da-b524-69d0bf253d1c.png">
 
-Objectives:
+Objectives:<br>
 The newly developed code is expected to behave in the following way: 
-•  Independent processes will be started up to serve individual client requests. These should all be started by the transmogrifier user. 
-•  Each of these processes may run for an extended period, depending on how much work is required to serve their specific request. This workload is expected to be highly variable. 
-•  A dedicated Transmogrified/ folder has been created on each server, which these processes will occasionally write to. 
-
+-  Independent processes will be started up to serve individual client requests. These should all be started by the transmogrifier user. 
+-  Each of these processes may run for an extended period, depending on how much work is required to serve their specific request. This workload is expected to be highly variable. 
+-  A dedicated Transmogrified/ folder has been created on each server, which these processes will occasionally write to. 
+<br>
 You have been asked to create a solution which monitors the following at regular intervals: 
-•  Processes currently running on the machine. 
-•  Contents of the Transmogrified/ folder. 
+-  Processes currently running on the machine. 
+-  Contents of the Transmogrified/ folder. 
 Write a script in the language of your choosing, which will be used to achieve the above. 
 
 Description of script's logic:
