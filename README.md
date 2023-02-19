@@ -8,6 +8,9 @@ Target:
 Description of script's logic:
 
 Assumptions:
+1. Its understood that the required functionality can be provided by any single tool utilized. Variations and combination of them used for demo puposes.
+2. For the simplicity maximum rights are provided to resourses. In the real environment the least privilege rule would be applied.
+3. For the simplicity EC2 instances created in the default VPC
 
 ---
 
