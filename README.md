@@ -8,9 +8,9 @@ Target:
 Description of script's logic:
 
 Assumptions:
-1. Its understood that the required functionality can be provided by any single tool utilized. Variations and combination of them used for demo puposes.
-2. For the simplicity maximum rights are provided to resourses. In the real environment the least privilege rule would be applied.
-3. For the simplicity EC2 instances created in the default VPC
+1. Any one of the tools being used can provide the necessary functionality. I am demonstrating different variations and combinations of them for demo purposes.
+2. To keep things work smoothly, I am giving resources maximum rights. In an actual production environment, I would apply the principle of least privilege.
+3. To keep things simple, I am creating EC2 instances in the default VPC. In an actual production environment, I would create the separate VPC, subnets, route tables, IGW and would apply additional level of the network and systems hardening.
 
 ---
 
