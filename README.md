@@ -408,7 +408,7 @@ private_key_file = ~/.ssh/test_delete.pem
 ```
 </details>
 
-<details markdown=1><summary markdown="span">Extra info</summary>
+<details markdown=1><summary markdown="span">Launching</summary>
 
 ``` tf
 # terraform template:
