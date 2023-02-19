@@ -95,7 +95,7 @@ crontab -l | { cat; echo "0 0 * * 0 scp /home/ec2-user/Transmogrified/* user@rem
 ```
 </details>
 
-<details markdown=1><summary markdown="span">Pre-requisites</summary>
+<details markdown=1><summary markdown="span">Pre-requisites to launch</summary>
 
 ```
 ```
@@ -119,7 +119,7 @@ crontab -l | { cat; echo "0 0 * * 0 scp /home/ec2-user/Transmogrified/* user@rem
 ```
 </details>
 
-<details markdown=1><summary markdown="span">Pre-requisites</summary>
+<details markdown=1><summary markdown="span">Pre-requisites to launch</summary>
 
 ```
 
