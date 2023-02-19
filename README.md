@@ -398,7 +398,27 @@ private_key_file = ~/.ssh/test_delete.pem
 ```
 </details>
 
-<details markdown=1><summary markdown="span">Extras / pre-requisites</summary>
+<details markdown=1><summary markdown="span">Extra info</summary>
+``` tf
+# terraform template:
+terraform init
+terraform validate
+terraform plan
+terraform apply
+terraform destroy
+
+# ansible:
+# ad-hoc command to launch the script:
+ansible all -m script -a "/home/ec2-user/environment/Terraform/script.sh &" --become --become-user=ec2-user
+# ad-hoc command to ping all the instances
+ansible all --key-file ~/.ssh/test_delete.pem -i inventory -m ping -u ec2-user
+
+# launch the playbook:
+ansible-playbook playbook.yml
+```
+</details>
+
+<details markdown=1><summary markdown="span">Extra info</summary>
 
 ``` sh
 1. create key pairs on a master machine 
