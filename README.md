@@ -11,6 +11,7 @@ Assumptions:
 1. Any one of the tools being used can provide the necessary functionality. I am demonstrating different variations and combinations of them for demo purposes.
 2. To keep things work smoothly, I am giving resources maximum rights. In an actual production environment, I would apply the principle of least privilege.
 3. To keep things simple, I am creating EC2 instances in the default VPC. In an actual production environment, I would create the separate VPC, subnets, route tables, IGW and would apply additional level of the network and systems hardening.
+4. All the necessary functionality can be easily accomplished by utilizing a dedicated monitoring tool such as AWS CloudWatch. I am using scripting for demonstration purposes only.
 
 ---
 
