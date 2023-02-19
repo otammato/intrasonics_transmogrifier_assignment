@@ -391,7 +391,7 @@ output "slaves_ips" {
         state: directory
         owner: "{{ user }}"
         group: "ec2-user"
-        mode: '0777' # this is only for testing purposes. should be limited in production
+        mode: '0777' # this is only for testing purposes and should be limited in production
         
     # Create a directory to store archive files
     - name: Create a Tar folder for archives
@@ -400,7 +400,7 @@ output "slaves_ips" {
         state: directory
         owner: "{{ user }}"
         group: "ec2-user"
-        mode: '0777' # this is only for testing purposes. should be limited in production
+        mode: '0777' # this is only for testing purposes and should be limited in production
 
     # Copy the script to the slave servers
     - name: Copy transmogrifier script to slave
@@ -409,7 +409,7 @@ output "slaves_ips" {
         dest: /home/ec2-user/script.sh
         owner: "ec2-user"
         group: "ec2-user"
-        mode: '0777' # this is only for testing purposes. should be limited in production
+        mode: '0777' # this is only for testing purposes and should be limited in production
         
     # Schedule the script to run every minute
     - name: Create cron task to run script every minute
