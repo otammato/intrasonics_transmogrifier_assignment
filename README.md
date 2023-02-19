@@ -3,7 +3,7 @@
 
 <img width="1024" alt="Screenshot 2023-02-19 at 16 30 51" src="https://user-images.githubusercontent.com/104728608/219961551-35e4cb7a-e0dd-46da-b524-69d0bf253d1c.png">
 
-Objectives:<br>
+##Objectives:<br>
 The recently added functionality is expected to behave in the following way: 
 -  Independent processes will be started up to serve individual client requests. These should all be started by the transmogrifier user. 
 -  Each of these processes may run for an extended period, depending on how much work is required to serve their specific request. This workload is expected to be highly variable. 
@@ -15,9 +15,9 @@ You have been asked to create a solution which monitors the following at regular
 -  Contents of the Transmogrified/ folder. 
 Write a script in the language of your choosing, which will be used to achieve the above. 
 
-Description of script's logic:
+## Description of script's logic:
 
-Assumptions:
+## Assumptions:
 1. Any one of the tools being used can provide the necessary functionality. I am demonstrating different variations and combinations of them for demo purposes.
 2. To keep things work smoothly, I am giving resources maximum rights. In an actual production environment, I would apply the principle of least privilege.
 3. To keep things simple, I am creating EC2 instances in the default VPC. In an actual production environment, I would create the separate VPC, subnets, route tables, IGW, NACLs and would apply additional level of the network and systems hardening.
