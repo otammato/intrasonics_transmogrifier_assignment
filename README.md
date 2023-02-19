@@ -23,8 +23,8 @@ The solution involves:
 - to place the created log files at the same (for simplicity) Transmogrified/ folder
 2. The script launching these cron tasks:
 - at regular intervals launch the main script
-- at regular intervals create .tar archives and place them to Archives/ folder
-- at regular intervals backup the .tar archives to a "master" server managed by a DevOps
+- at regular intervals create .tar archives of Transmogrified/ folder's content and place them to the Archives/ folder
+- at regular intervals backup the .tar archives to a "master" server managed by a DevOps using rsync
 3. [Optionally] Terraform + Ansible infrastructure to test the script
 
 
