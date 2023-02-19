@@ -19,7 +19,8 @@ Write a script in the language of your choosing, which will be used to achieve t
 ## Description of the created script's logic:
 The solution involves:
 1. The main script
-- to regularly monitor and log processes and content of the Transmogrified/ folder to .txt files and place them at the same Transmogrified/ folder
+- to regularly monitor and log processes and content of the Transmogrified/ folder to .txt files 
+- to place created log files at the same (for simplicity) Transmogrified/ folder
 2. The script to launch a cron tasks:
 - at regular intervals launch the main script
 - at regular intervals create .tar archives and place them to Archives/ folder
