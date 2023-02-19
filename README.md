@@ -3,6 +3,12 @@
 
 <img width="1024" alt="Screenshot 2023-02-19 at 16 30 51" src="https://user-images.githubusercontent.com/104728608/219961551-35e4cb7a-e0dd-46da-b524-69d0bf253d1c.png">
 
+Target:
+
+Description of script's logic:
+
+Assumptions:
+
 ---
 
 ## Bash <br>
@@ -399,6 +405,7 @@ private_key_file = ~/.ssh/test_delete.pem
 </details>
 
 <details markdown=1><summary markdown="span">Extra info</summary>
+
 ``` tf
 # terraform template:
 terraform init
