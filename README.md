@@ -386,6 +386,16 @@ output "slaves_ips" {
 ```
 </details>
 
+<details markdown=1><summary markdown="span">Ansible .cfg</summary>
+
+``` yml
+[defaults]
+remote_user = ec2-user 
+inventory = inventory 
+private_key_file = ~/.ssh/test_delete.pem
+```
+</details>
+
 <details markdown=1><summary markdown="span">Extras / pre-requisites</summary>
 
 ``` sh
