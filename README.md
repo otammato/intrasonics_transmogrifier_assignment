@@ -386,6 +386,21 @@ output "slaves_ips" {
 ```
 </details>
 
+<details markdown=1><summary markdown="span">Pre-requisites to launch</summary>
+
+``` sh
+1. create key pairs on a master machine 
+    ssh-keygen -t rsa -b 2048
+
+2. import public key into the ec2 console
+    aws ec2 import-key-pair --key-name "test_delete" --public-key-material fileb://~/.ssh/test_delete.pem
+
+3. install ansible on a master machine
+    sudo yum update -y
+    sudo amazon-linux-extras install ansible2 -y
+```
+</details>
+
 ---
 
 <img width="1024" alt="Screenshot 2023-02-19 at 17 45 01" src="https://user-images.githubusercontent.com/104728608/219965610-eaa9b242-b6c2-439c-833c-800524c1d39f.png">
