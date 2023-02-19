@@ -473,7 +473,7 @@ ansible-playbook playbook.yml
 ```
 </details>
 
-<details markdown=1><summary markdown="span">Extra info</summary>
+<details markdown=1><summary markdown="span">Extra commands which might be useful</summary>
 
 ``` sh
 1. create key pairs on a master machine 
