@@ -10,7 +10,6 @@ The recently added functionality is expected to behave in the following way:
 -  Independent processes will be started up to serve individual client requests. These should all be started by the transmogrifier user. 
 -  Each of these processes may run for an extended period, depending on how much work is required to serve their specific request. This workload is expected to be highly variable. 
 -  A dedicated Transmogrified/ folder has been created on each server, which these processes will occasionally write to. 
-<br>
 
 You have been asked to create a solution which monitors the following at regular intervals:<br>
 -  Processes currently running on the machine. 
