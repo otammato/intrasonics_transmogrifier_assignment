@@ -3,7 +3,9 @@
 
 <img width="1024" alt="Screenshot 2023-02-19 at 16 30 51" src="https://user-images.githubusercontent.com/104728608/219961551-35e4cb7a-e0dd-46da-b524-69d0bf253d1c.png">
 
-##Objectives:<br>
+---
+
+## Objectives:<br>
 The recently added functionality is expected to behave in the following way: 
 -  Independent processes will be started up to serve individual client requests. These should all be started by the transmogrifier user. 
 -  Each of these processes may run for an extended period, depending on how much work is required to serve their specific request. This workload is expected to be highly variable. 
