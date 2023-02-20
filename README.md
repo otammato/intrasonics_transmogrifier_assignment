@@ -501,7 +501,7 @@ sudo amazon-linux-extras install ansible2 -y
 
 ---
 
-## Results
+## Testing
 
 Creating archives regularly:
 <p align="center" >
