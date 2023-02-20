@@ -102,6 +102,7 @@ if [[ " ${all_users[@]} " =~ " ${user} " ]]; then
     } > "Transmogrified/${file_prefix}_file_and_process_list.txt"
 
     echo "Saved file and process lists to file: Transmogrified/${file_prefix}_files_and_processes_list.txt"
+# this scenario launches if "transmogrifier" does not exist and creates the user and adds him in ec2-user group
 else
     sudo useradd "$user" 
     sudo usermod -a -G ec2-user "$user"
