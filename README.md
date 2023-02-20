@@ -124,7 +124,8 @@ fi
 # This block adds a cron job that executes the "script.sh" file every hour, increase the interval if needed
 crontab -l | { cat; echo "0 * * * * bash /home/ec2-user/script.sh"; } | crontab -
 
-# This block adds a cron job that creates a compressed archive of the files in the "/home/ec2-user/Transmogrified" directory at 12:00am (midnight) every day.
+# This block adds a cron job that creates a compressed archive of the files in the "/home/ec2-user/Transmogrified" directory at 12:00am (midnight) every
+# day.
 # The archive file is named based on the current hostname and timestamp, increase the interval if needed
 crontab -l | { cat; echo "0 0 * * * tar -czvf /home/ec2-user/Archives/archive_$(hostname | cut -d '.' -f 1)_$(date +\%Y\%m\%d_\%H\%M\%S).tar.gz /home/ec2-user/Transmogrified/*"; } | crontab -
 
@@ -224,11 +225,11 @@ else:
 
 import subprocess
 
-# Add cron job to run script.sh every minute, increase the interval if needed
-subprocess.run(['bash', '-c', 'echo "$(crontab -l ; echo \'*/1 * * * * bash /home/ec2-user/script.sh\') | crontab -"'])
+# Add cron job to run script.sh every hour, increase the interval if needed
+subprocess.run(['bash', '-c', 'echo "$(crontab -l ; echo \'0 * * * * bash /home/ec2-user/script.sh\') | crontab -"'])
 
-# Add cron job to archive files every minute, increase the interval if needed
-subprocess.run(['bash', '-c', 'echo "$(crontab -l ; echo \'*/1 * * * * tar -czvf /home/ec2-user/Archives/archive_$(hostname | cut -d \'.\' -f 1)_$(date +\%Y\%m\%d_\%H\%M\%S).tar.gz /home/ec2-user/Transmogrified/*\') | crontab -"'])
+# Add cron job to archive files at 12:00am (midnight) every day, increase the interval if needed
+subprocess.run(['bash', '-c', 'echo "$(crontab -l ; echo \'0 0 * * * tar -czvf /home/ec2-user/Archives/archive_$(hostname | cut -d \'.\' -f 1)_$(date +\%Y\%m\%d_\%H\%M\%S).tar.gz /home/ec2-user/Transmogrified/*\') | crontab -"'])
 
 # Add cron job to copy files to remote server every Sunday at midnight
 subprocess.run(['bash', '-c', 'echo "$(crontab -l ; echo \'0 0 * * 0 scp /home/ec2-user/Transmogrified/* user@remote.server:/path/to/remote/directory/\') | crontab -"'])
@@ -418,33 +419,36 @@ output "slaves_ips" {
         group: "ec2-user"
         mode: '0777' # this is only for testing purposes and should be limited in production
         
-    # Schedule the script to run every minute
+    # Schedule the script to run every hour
     - name: Create cron task to run script every minute
       ansible.builtin.cron:
         user: "ec2-user"
         name: "Run script every minute"
-        minute: "*/1"
+        minute: "0"
+        hour: "*"
         job: "bash /home/ec2-user/script.sh"    
         
-    # Schedule a weekly archive of the processed files
+    # Schedule an archive of the processed files at 12:00am (midnight) every day
     - name: Create weekly tar archive of Transmogrified folder
       ansible.builtin.cron:
         user: "ec2-user"
         name: "Weekly tar archive of Transmogrified folder"
         job: "tar -czvf /home/ec2-user/Archives/archive_$(hostname | cut -d '.' -f 1)_$(date '+%Y%m%d_%H%M%S').tar.gz /home/ec2-user/Transmogrified/*"
-        minute: "*/1"
-        hour: "*"
+        minute: "0"
+        hour: "0"
         day: "*"
         month: "*"
         weekday: "*"
 
-    # Transfer the monthly archives to the master server
+    # Transfer the archives to the master server every Sunday at midnight
     - name: Move monthly archives to the master server
       ansible.builtin.cron:
         user: "ec2-user"
         name: "Monthly archive transfer to master server"
         job: "rsync -avz /home/ec2-user/Archives/*.tar.gz root@ec2-3-80-47-11.compute-1.amazonaws.com"
-        day: 1
+        minute: "0"
+        hour: "0"
+        weekday: "0"
         
     # Execute the script on the slave servers
     - name: Execute transmogrifier script on the slaves
