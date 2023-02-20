@@ -30,7 +30,7 @@ The solution involves:
 
 
 ## Assumptions:
-- The task can be done by any one of the tools being used (Bash or Python or Terraform or Ansible). I am demonstrating different variations and combinations of them for demo purposes.
+- The script can be launched by any one of the tools being used (Bash or Python or Terraform or Ansible). I am demonstrating different variations and combinations of them for demo purposes.
 - To keep things work smoothly, I am giving resources maximum rights. In an actual production environment, I would apply the principle of least privilege.
 - To keep things simple, I am creating EC2 instances in the default VPC. In an actual production environment, I would create the separate VPC, subnets, route tables, IGW, NACLs and would apply additional level of the network and systems hardening.
 - All the necessary functionality can be easily accomplished by utilizing a dedicated monitoring tool such as AWS CloudWatch. I am using scripting for demonstration purposes only.
