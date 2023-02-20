@@ -22,7 +22,7 @@ The solution involves:
  ### 2. The script for launching these cron tasks:
 - at regular intervals launches the main script
 - at regular intervals creates .tar archives of Transmogrified/ folder's content and places them to the Archives/ folder
-- at regular intervals backups the .tar archives to a "master" server managed by a DevOps using rsync
+- at regular intervals backups the .tar archives to a "master" server managed by a DevOps
  ### 3. [Optionally] Terraform + Ansible infrastructure to test the script
 
 
