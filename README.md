@@ -252,6 +252,8 @@ sudo python3 script.py && sudo python3 script_cron.py
 # instance type, and subnet, and attaches the security group.
 # It also creates an "inventory" file for the following Ansible playbook and IPs as output
 
+# for the simplicity I used the default VPC
+
 # Configure AWS provider for us-east-1 region with shared credentials and config files
 provider "aws" {
   region                    = "us-east-1"
@@ -296,8 +298,8 @@ resource "aws_security_group" "ec2_security_group" {
   vpc_id      = aws_default_vpc.default.id
 
   ingress {
-    from_port   = 22
-    to_port     = 22
+    from_port   = 22 # for the system hardening never use the default port in production, set up another port in your system and then change it here
+    to_port     = 22 # for the system hardening never use the default port in production, set up another port in your system and then change it here
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]  # change this to your IP for security
   }
