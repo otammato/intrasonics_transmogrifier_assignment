@@ -163,7 +163,7 @@ if user in all_users:
     else:
         # Create the Transmogrified/ folder and set files_list to an empty array
         os.makedirs("Transmogrified/")
-        print("Transmogrified/ folder created")
+        print("Transmogrified/ folder created, please relaunch the script")
         files_list = []
 
         # Set the owner and group for Transmogrified/ folder and give read, write, and execute permissions recursively
@@ -173,9 +173,9 @@ if user in all_users:
     
     # Check if Archives/ exists and create it if not
     if not os.path.isdir("Archives/"):
-        # Create the Archives/ folder and set files_list to an empty array
+        # Create the Archives/ folder
         os.makedirs("Archives/")
-        print("Archives/ folder created")
+        print("Archives/ folder created, please relaunch the script")
 
         # Set the owner and group for Archives/ folder and give read, write, and execute permissions recursively
         os.system("sudo chown -R transmogrifier:ec2-user Archives/")
@@ -209,7 +209,7 @@ if user in all_users:
 else:
     os.system(f"sudo useradd {user}")
     os.system(f"sudo usermod -a -G ec2-user {user}")
-    print(f"{user} created, please create a password to the user")
+    print(f"{user} created, please create a password to the user and relaunch the script")
 ```
 </details>
 
@@ -220,10 +220,10 @@ else:
 
 import subprocess
 
-# Add cron job to run script.sh every minute
+# Add cron job to run script.sh every minute, increase the interval if needed
 subprocess.run(['bash', '-c', 'echo "$(crontab -l ; echo \'*/1 * * * * bash /home/ec2-user/script.sh\') | crontab -"'])
 
-# Add cron job to archive files every minute
+# Add cron job to archive files every minute, increase the interval if needed
 subprocess.run(['bash', '-c', 'echo "$(crontab -l ; echo \'*/1 * * * * tar -czvf /home/ec2-user/Archives/archive_$(hostname | cut -d \'.\' -f 1)_$(date +\%Y\%m\%d_\%H\%M\%S).tar.gz /home/ec2-user/Transmogrified/*\') | crontab -"'])
 
 # Add cron job to copy files to remote server every Sunday at midnight
