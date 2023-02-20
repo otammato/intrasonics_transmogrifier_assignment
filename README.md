@@ -321,7 +321,7 @@ resource "aws_security_group" "ec2_security_group" {
 
 # Launch an EC2 instance with the specified AMI, instance type, and subnet, and attach the security group
 resource "aws_instance" "ansible_slave" {
-  count = 1
+  count = 3
   ami           = data.aws_ssm_parameter.current-ami.value
   instance_type = "t2.micro"
   subnet_id     = aws_subnet.subnet_1.id
@@ -340,7 +340,10 @@ resource "local_file" "slaves_ips" {
   aws_instance.ansible_slave.*.public_ip[0],
   aws_instance.ansible_slave.*.public_ip[1],
   aws_instance.ansible_slave.*.public_ip[2]
-)
+  )
+    filename = "inventory"
+}
+
 
 ## this is to create only one slave_instance
 # resource "local_file" "slaves_ips" {
@@ -425,7 +428,7 @@ output "slaves_ips" {
       ansible.builtin.cron:
         user: "ec2-user"
         name: "Weekly tar archive of Transmogrified folder"
-        job: "tar -czvf /home/ec2-user/Archives/archive_$(hostname | cut -d '.' -f 1)_$(date +\%Y\%m\%d_\%H\%M\%S).tar.gz /home/ec2-user/Transmogrified/*"
+        job: "tar -czvf /home/ec2-user/Archives/archive_$(hostname | cut -d '.' -f 1)_$(date '+%Y%m%d_%H%M%S').tar.gz /home/ec2-user/Transmogrified/*"
         minute: "*/1"
         hour: "*"
         day: "*"
