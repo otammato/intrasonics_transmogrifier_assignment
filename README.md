@@ -519,8 +519,9 @@ Launching scripts:
 
 Creating Terraform Resources:
 <p align="center" >
-  <img width="1024" alt="Screenshot 2023-02-19 at 23 52 50" src="https://user-images.githubusercontent.com/104728608/219983467-9c08d5dc-291d-40b4-8938-4af7eed804b5.png">
+  <img width="1024" alt="Screenshot 2023-02-20 at 09 28 08" src="https://user-images.githubusercontent.com/104728608/220066373-37c041a2-725f-4023-8b81-ada2e478dbfd.png">
 </p>
+
 
 Launching Ansible playbook:
 <p align="center" >
