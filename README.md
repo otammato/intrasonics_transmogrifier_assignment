@@ -244,7 +244,7 @@ sudo python3 script.py && sudo python3 script_cron.py
 
 ---
 
-## Optional (creating the infrastructure to host and launch the script - combination of Terraform and Ansible)
+## Optional (Automatically create the infrastructure and launch the scripts - combination of Terraform, Ansible and Bash)
 
 <details markdown=1><summary markdown="span">Terraform script</summary>
 
