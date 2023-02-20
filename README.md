@@ -16,7 +16,7 @@ Write a script in the language of your choosing, which will be used to achieve t
 ## Description of the logic of the created script:
 The solution involves:
  
- #### 1. To demonstrate the possible practical usage describe the ETL process up to the point of loading the files onto the master server.
+ #### 1. To demonstrate the possible practical usage describe the ETL process up to the point of loading files onto the master server.
 &nbsp;&nbsp;&nbsp;&nbsp;Since there were no specific requirements for the ETL process or a representation, the process is only designed up to the point of &nbsp;&nbsp;&nbsp;&nbsp;loading the files onto the master server. Instead, the data could be loaded into a Data Warehouse or a database and then connected to &nbsp;&nbsp;&nbsp;&nbsp;a representation layer, allowing for the creation of dashboards using tools such as MS Power BI, Tableau, or AWS Quicksight or some &nbsp;&nbsp;&nbsp;&nbsp;specific monitoring tools.
 
  #### 2. Design and develop the main script
