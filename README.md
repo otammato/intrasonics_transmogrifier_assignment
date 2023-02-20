@@ -502,9 +502,9 @@ sudo amazon-linux-extras install ansible2 -y
 
 ---
 
-## Testing
+## Testing / Conclusion
 
-Creating archives regularly:
+Launching scripts:
 <p align="center" >
   <img width="1024" alt="Screenshot 2023-02-19 at 23 32 09" src="https://user-images.githubusercontent.com/104728608/219982081-395a37b1-e446-4f5d-a5ff-f76f139cd506.png">
 </p>
