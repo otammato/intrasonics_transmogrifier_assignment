@@ -509,6 +509,9 @@ Launching scripts:
   <img width="1024" alt="Screenshot 2023-02-20 at 09 16 28" src="https://user-images.githubusercontent.com/104728608/220063636-6c548dba-9bce-41f3-911c-add1c1d7fc2f.png">
 </p>
 
+<p align="center" >
+  <img width="1024" alt="Screenshot 2023-02-20 at 09 23 10" src="https://user-images.githubusercontent.com/104728608/220065309-fb66a565-fe8d-4ff5-a4da-e520a90f93d7.png">
+</p>
 
 <p align="center" >
   <img width="1024" alt="Screenshot 2023-02-19 at 23 32 09" src="https://user-images.githubusercontent.com/104728608/219982081-395a37b1-e446-4f5d-a5ff-f76f139cd506.png">
