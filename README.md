@@ -142,7 +142,7 @@ sudo bash script.sh && sudo bash script_cron.sh
 ```
 </details>
 
-<br><br>
+<br>
 
 ## Python <br>
 
@@ -244,7 +244,7 @@ sudo python3 script.py && sudo python3 script_cron.py
 ```
 </details>
 
-<br><br>
+<br>
 
 ## Optional (Automatically create the infrastructure and launch the scripts - combination of Terraform, Ansible and Bash)
 
