@@ -17,6 +17,7 @@ Write a script in the language of your choosing, which will be used to achieve t
 The solution involves:
  
  #### 1. Design of the ETL process up to the point of loading the files onto the master server.
+Since there were no specific requirements for the ETL process or a representation layer, the process is only designed up to the point of loading the files onto the master server. Instead, the data could be loaded into a Data Warehouse or a database and then connected to a representation layer, allowing for the creation of dashboards using tools such as MS Power BI, Tableau, or AWS Quicksight.
 
  #### 2. Design and developing the main script
 - to monitor and log the processes and content of the Transmogrified/ folder to .txt files 
@@ -33,7 +34,7 @@ The solution involves:
 - To keep things work smoothly, I am giving resources maximum rights. In an actual production environment, I would apply the principle of least privilege.
 - To keep things simple, I am creating EC2 instances in the default VPC. In an actual production environment, I would create the separate VPC, subnets, route tables, IGW, NACLs and would apply additional level of the network and systems hardening.
 - All the necessary functionality can be easily accomplished by utilizing a dedicated monitoring tool such as AWS CloudWatch. I am using scripting for demonstration purposes only.
-- Since there were no specific requirements for the ETL process or a representation layer, I only designed the process up to the point of loading the files onto the master server. Instead, the data could be loaded into a Data Warehouse or database and then connected to a representation layer, allowing for the creation of dashboards using tools such as MS Power BI, Tableau, or AWS Quicksight.
+- Since there were no specific requirements for the ETL process or a representation layer, the process is only designed up to the point of loading the files onto the master server. Instead, the data could be loaded into a Data Warehouse or a database and then connected to a representation layer, allowing for the creation of dashboards using tools such as MS Power BI, Tableau, or AWS Quicksight.
 
 ---
 
