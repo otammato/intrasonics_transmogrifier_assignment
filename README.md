@@ -137,7 +137,7 @@ sudo bash script.sh && sudo bash script_cron.sh
 ```
 </details>
 
----
+--
 
 ## Python <br>
 
