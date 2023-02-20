@@ -13,7 +13,7 @@ Write a script in the language of your choosing, which will be used to achieve t
 
 <img width="1024" alt="Screenshot 2023-02-20 at 18 43 58" src="https://user-images.githubusercontent.com/104728608/220180302-63c2a3ed-0b9a-4ec6-8b92-655ea7b6c3f3.png">
 
-## Description of the logic of the created script:
+## Description of the logic of script:
 The solution involves:
  
  #### 1. Demo of the possible practical usage (ETL process up to the point of loading files onto the master server).
