@@ -67,7 +67,7 @@ if [[ " ${all_users[@]} " =~ " ${user} " ]]; then
     
     # Check if Archives/ exists and create it if not
     if [ ! -d "Archives/" ]; then
-        # Create the Archives/ folder and set files_list to an empty array
+        # Create the Archives/ folder
         mkdir "Archives/"
         echo "Archives/ folder created"
 
