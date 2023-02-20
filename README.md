@@ -377,7 +377,6 @@ output "slaves_ips" {
   # Define variables to be used later
   vars:
     user: transmogrifier
-    week_number: "{{ ansible_date_time.week_number }}"
 
   # Define tasks to be performed
   tasks:
