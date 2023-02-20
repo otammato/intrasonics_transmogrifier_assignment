@@ -15,15 +15,17 @@ Write a script in the language of your choosing, which will be used to achieve t
 
 ## Description of the logic of the created script:
 The solution involves:
+ 
+ ### 1. Design of the ETL process up to the point of loading the files onto the master server.
 
- ### 1. The main script
-- monitors and logs the processes and content of the Transmogrified/ folder to .txt files 
-- places the created log files at the same (for simplicity) Transmogrified/ folder
- ### 2. The script for launching the following cron tasks:
-- at regular intervals launches the main script
-- at regular intervals creates .tar archives of Transmogrified/ folder's content and places them to the Archives/ folder
-- at regular intervals backups the .tar archives to a "master" server managed by a DevOps
- ### 3. [Optionally] Terraform + Ansible infrastructure to test the script
+ ### 2. Design and developing the main script
+- to monitor and log the processes and content of the Transmogrified/ folder to .txt files 
+- to place the created log files at the same (for simplicity) Transmogrified/ folder
+ ### 3. Design and developing the script for launching the following cron tasks:
+- at regular intervals launch the main script
+- at regular intervals create .tar archives of Transmogrified/ folder's content and place them to the Archives/ folder
+- at regular intervals backup the .tar archives to a "master" server managed by a DevOps
+ ### 4. [Optionally] Terraform + Ansible infrastructure to test the script
 
 
 ## Assumptions:
