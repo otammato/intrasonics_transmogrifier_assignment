@@ -1,5 +1,5 @@
 # intrasonics_transmogrifier_assignment
-
+---
 ## Objectives:<br>
 Monitor the existing solution. The recently added features make the existing solution expected to behave in the following way: 
 -  Independent processes will be started up to serve individual client requests. These should all be started by the transmogrifier user. 
@@ -12,8 +12,6 @@ You have been asked to create a solution which monitors the following at regular
 Write a script in the language of your choosing, which will be used to achieve the above. 
 
 <img width="1024" alt="Screenshot 2023-02-19 at 16 30 51" src="https://user-images.githubusercontent.com/104728608/219961551-35e4cb7a-e0dd-46da-b524-69d0bf253d1c.png">
-
----
 
 ## Description of the logic of the created script:
 The solution involves:
