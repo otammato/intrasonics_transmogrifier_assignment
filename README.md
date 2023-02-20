@@ -17,7 +17,7 @@ Write a script in the language of your choosing, which will be used to achieve t
 The solution involves:
 
  ### 1. The main script
-- regularly monitors and logs the processes and content of the Transmogrified/ folder to .txt files 
+- monitors and logs the processes and content of the Transmogrified/ folder to .txt files 
 - places the created log files at the same (for simplicity) Transmogrified/ folder
  ### 2. The script for launching the following cron tasks:
 - at regular intervals launches the main script
