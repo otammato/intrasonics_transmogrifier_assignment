@@ -19,10 +19,10 @@ The solution involves:
  #### 1. Design of the ETL process up to the point of loading the files onto the master server.
 Since there were no specific requirements for the ETL process or a representation layer, the process is only designed up to the point of loading the files onto the master server. Instead, the data could be loaded into a Data Warehouse or a database and then connected to a representation layer, allowing for the creation of dashboards using tools such as MS Power BI, Tableau, or AWS Quicksight.
 
- #### 2. Design and developing the main script
+ #### 2. Design and develop the main script
 - to monitor and log the processes and content of the Transmogrified/ folder to .txt files 
 - to place the created log files at the same (for simplicity) Transmogrified/ folder
- #### 3. Design and developing the script for launching the following cron tasks:
+ #### 3. Design and develop the script for launching the following cron tasks:
 - at regular intervals launch the main script
 - at regular intervals create .tar archives of Transmogrified/ folder's content and place them to the Archives/ folder
 - at regular intervals backup the .tar archives to a "master" server managed by a DevOps
