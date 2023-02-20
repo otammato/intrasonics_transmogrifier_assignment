@@ -56,7 +56,7 @@ if [[ " ${all_users[@]} " =~ " ${user} " ]]; then
     else
         # Create the Transmogrified/ folder and set files_list to an empty array
         mkdir "Transmogrified/"
-        echo "Transmogrified/ folder created"
+        echo "Transmogrified/ folder created, please relaunch the script"
         files_list=()
 
         # Set the owner and group for Transmogrified/ folder and give read, write, and execute permissions recursively
@@ -69,7 +69,7 @@ if [[ " ${all_users[@]} " =~ " ${user} " ]]; then
     if [ ! -d "Archives/" ]; then
         # Create the Archives/ folder
         mkdir "Archives/"
-        echo "Archives/ folder created"
+        echo "Archives/ folder created, please relaunch the script"
 
         # Set the owner and group for Archives/ folder and give read, write, and execute permissions recursively
         sudo chown -R transmogrifier:ec2-user Archives/
@@ -106,7 +106,7 @@ if [[ " ${all_users[@]} " =~ " ${user} " ]]; then
 else
     sudo useradd "$user" 
     sudo usermod -a -G ec2-user "$user"
-    echo ""$user" created, please create a password to the user"
+    echo ""$user" created, please create a password to the user and relaunch the script"
 fi
 ```
 
