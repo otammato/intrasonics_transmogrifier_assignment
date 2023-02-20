@@ -11,7 +11,7 @@ You have been asked to create a solution which monitors the following at regular
 -  Contents of the Transmogrified/ folder. 
 Write a script in the language of your choosing, which will be used to achieve the above. 
 
-<img width="1024" alt="Screenshot 2023-02-19 at 16 30 51" src="https://user-images.githubusercontent.com/104728608/219961551-35e4cb7a-e0dd-46da-b524-69d0bf253d1c.png">
+<img width="1024" alt="Screenshot 2023-02-20 at 18 43 58" src="https://user-images.githubusercontent.com/104728608/220180302-63c2a3ed-0b9a-4ec6-8b92-655ea7b6c3f3.png">
 
 ## Description of the logic of the created script:
 The solution involves:
