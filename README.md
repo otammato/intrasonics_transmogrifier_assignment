@@ -117,11 +117,11 @@ fi
 ``` sh
 #!/bin/bash
 
-# This block adds a cron job that executes the "script.sh" file every minute
+# This block adds a cron job that executes the "script.sh" file every minute, increase the interval if needed
 crontab -l | { cat; echo "*/1 * * * * bash /home/ec2-user/script.sh"; } | crontab -
 
 # This block adds a cron job that creates a compressed archive of the files in the "/home/ec2-user/Transmogrified" directory every minute
-# The archive file is named based on the current hostname and timestamp
+# The archive file is named based on the current hostname and timestamp, increase the interval if needed
 crontab -l | { cat; echo "*/1 * * * * tar -czvf /home/ec2-user/Archives/archive_$(hostname | cut -d '.' -f 1)_$(date +\%Y\%m\%d_\%H\%M\%S).tar.gz /home/ec2-user/Transmogrified/*"; } | crontab -
 
 # This block adds a cron job that copies all the files in the "/home/ec2-user/Transmogrified" directory to a remote server every Sunday at midnight
