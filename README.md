@@ -17,7 +17,7 @@ Write a script in the language of your choosing, which will be used to achieve t
 The solution involves:
  
  #### 1. Design of the ETL process up to the point of loading the files onto the master server.
-  Since there were no specific requirements for the ETL process or a representation layer, the process is only designed up to the point of loading the       files onto the master server. Instead, the data could be loaded into a Data Warehouse or a database and then connected to a representation layer,         allowing for the creation of dashboards using tools such as MS Power BI, Tableau, or AWS Quicksight.
+&nbsp;&nbsp;Since there were no specific requirements for the ETL process or a representation layer, the process is only designed up to the point of &nbsp;&nbsp;loading the files onto the master server. Instead, the data could be loaded into a Data Warehouse or a database and then connected to a &nbsp;&nbsp;representation layer, allowing for the creation of dashboards using tools such as MS Power BI, Tableau, or AWS Quicksight.
 
  #### 2. Design and develop the main script
 - to monitor and log the processes and content of the Transmogrified/ folder to .txt files 
