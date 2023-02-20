@@ -19,7 +19,7 @@ The solution involves:
  ### 1. The main script
 - regularly monitors and logs the processes and content of the Transmogrified/ folder to .txt files 
 - places the created log files at the same (for simplicity) Transmogrified/ folder
- ### 2. The script for launching these cron tasks:
+ ### 2. The script for launching the following cron tasks:
 - at regular intervals launches the main script
 - at regular intervals creates .tar archives of Transmogrified/ folder's content and places them to the Archives/ folder
 - at regular intervals backups the .tar archives to a "master" server managed by a DevOps
