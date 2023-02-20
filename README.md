@@ -506,6 +506,10 @@ sudo amazon-linux-extras install ansible2 -y
 
 Launching scripts:
 <p align="center" >
+  <img width="1024" alt="Screenshot 2023-02-20 at 09 12 19" src="https://user-images.githubusercontent.com/104728608/220063042-ea9ae029-9c11-492e-a6c3-0629a6b9e410.png">
+</p>
+
+<p align="center" >
   <img width="1024" alt="Screenshot 2023-02-19 at 23 32 09" src="https://user-images.githubusercontent.com/104728608/219982081-395a37b1-e446-4f5d-a5ff-f76f139cd506.png">
 </p>
 
