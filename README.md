@@ -34,7 +34,7 @@ The solution involves:
 - To keep things work smoothly, I am giving resources maximum rights. In an actual production environment, I would apply the principle of least privilege.
 - To keep things simple, I am creating EC2 instances in the default VPC. In an actual production environment, I would create the separate VPC, subnets, route tables, IGW, NACLs and would apply additional level of the network and systems hardening.
 - All the necessary functionality can be easily accomplished by utilizing a dedicated monitoring tool such as AWS CloudWatch. I am using scripting for demonstration purposes only.
-- The ETL process is only designed up to the point of loading the files onto the master server. Instead, the data could be loaded into a Data Warehouse or a database and then connected to a representation layer.
+- The ETL process is for demo purposes and only designed up to the point of loading the files onto the master server. Instead, the data could be loaded into a Data Warehouse or a database and then connected to a representation layer.
 
 ---
 
